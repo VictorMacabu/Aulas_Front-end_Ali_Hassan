@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>1021js</title>
+</head>
+<body style="background-color: darkblue;">
+    <div class="container" style="margin-top: 50px; background-color: aliceblue; margin-left:20%; margin-right:20%;" >
+    <form >
+        <table style="margin: auto;">
+            <tr>
+                <td><label id="lblValor" for="txtValor" style="padding-left: 35px;" required>Valor:</label></td>
+                <td><input type="number" id="txtValor" style="width: 80px; margin-top: 0;" step="0.01"/></td>
+                
+            </tr>
+            <tr>
+                <td><label for="txtDinheiro" id="lblDinheiro" required >Divisão do <br>dinheiro:</label></td>
+                <td><textarea type="text" id="txtDinheiro" style="width: 242px; height: 250px;" ></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="verificar" onclick="calcNotasMoedas()"></td>
+            </tr>
+        </table>        
+    </form>
+    </div>
+    <script src="js1021.js"></script>
+</body>
+</html>

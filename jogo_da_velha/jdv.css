@@ -3,8 +3,7 @@ body{
 }
 .conteinerJogo{
     background-color:  #23242385;
-   /* width: 100px;*/
-   /* height: 250px;*/
+    margin: auto;
     margin-top: 50px;
     margin-left:30%;
     margin-right:30%;

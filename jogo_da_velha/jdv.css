@@ -2,33 +2,59 @@ body{
     background-image: url(./image/papel_de_parede_jogo_da_velha.jpg);
 }
 .divCentral{
-    background-color: rgba(61, 60, 60, 0.555);
+    background-color: rgba(240, 240, 240, 0.555);
     margin: auto;
     border-radius: 10px;
+    display: flex;
+    height: 350px;
+    width: 780px;
+}
+.jogadores{
+   flex-wrap: wrap;
+}
+#jogador1 , #jogador2{
+    padding-left: 20px;
+    padding-right: 10px;
+    display: flex;
+    border-radius: 10px;
+    height: 60px;
+    width: 200px;
+    margin-left: 30%;
     
 }
+#jogador2{
+    margin-top: 50px;
+    background-color: white;
+}
+#jogador1{
+    margin-top: 100px;
+    margin-bottom: 0px;
+    background-color: rgb(96, 190, 77);
+}
+#jogador1 img, #jogador2 img{
+    padding: 5px;    
+}
+
 .conteinerJogo{
-    background-color:  #23242385;
+    
     margin: auto;
     margin-top: 80px;
+    margin-bottom: 80px;
+    align-items: center;
     width: 258px; /*(width tabuleiro + 6px borda) * 3(casas) */
+    height: 258px;
 
-}
-
-.jogador1{
-    background-color: whitesmoke;
-}
-
-.jogador2{
-    background-color: whitesmoke;
 }
 
 .tabuleiro{
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 80px;
+    height: 60px;
     width: 80px;
+    padding-top: 20px;
+    text-align: center;
     border-color: black;
+    
     
 }
 

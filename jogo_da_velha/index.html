@@ -9,6 +9,8 @@
 </head>
 <body>
     
+<div class="titulo"><h1>JOGO DA VELHA</h1></div> 
+    
 <div class="divCentral">
 
     <div class="jogadores">
@@ -23,7 +25,8 @@
         </div>
     </div>
 
-    <div class="conteinerJogo">
+    <div class="conteinerJogo" id="idTabuleiro">
+
         <div class="tabuleiro" id="cs1" jogada=""></div>
         <div class="tabuleiro" id="cs2" jogada=""></div>
         <div class="tabuleiro" id="cs3" jogada=""></div>
@@ -35,13 +38,12 @@
         <div class="tabuleiro" id="cs7" jogada=""></div>
         <div class="tabuleiro" id="cs8" jogada=""></div>
         <div class="tabuleiro" id="cs9" jogada=""></div>
-    </div>
-
-    
-        
-    
-<br>
+    </div> 
 </div>
-<script src="js_jdv"></script>
+<br>
+<input class="reiniciar" type ="button" value="REINICIAR" onclick="reiniciar()"/>
+
+
+<script src="js_jdv.js"></script>
 </body>
 </html>

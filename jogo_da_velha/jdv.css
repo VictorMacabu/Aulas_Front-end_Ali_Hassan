@@ -29,16 +29,20 @@ body{
 #jogador1{
     margin-top: 100px;
     margin-bottom: 0px;
-    background-color: rgb(96, 190, 77);
+    background-color: white;
 }
 #jogador1 img, #jogador2 img{
     padding: 5px;    
 }
-
+.titulo{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
 .conteinerJogo{
     
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 80px;
     align-items: center;
     width: 258px; /*(width tabuleiro + 6px borda) * 3(casas) */
@@ -105,4 +109,10 @@ body{
     border-style: solid;
     border-right-style: none;
     border-bottom-style: none;
+}
+.reiniciar{
+  margin-left: 45%;
+  padding: 5px 18px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(187, 37, 37);
 }

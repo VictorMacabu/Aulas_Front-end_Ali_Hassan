@@ -78,38 +78,47 @@ async function vencedor(){
 
     var vencedor = "";
 
-    if(((cs1 == cs2 && cs1 == cs3)||(cs1 == cs4 && cs1 == cs7)||(cs1 == cs5 && cs1 == cs9) ) && cs1 != ""){
+    if(((cs1 == cs2 && cs1 == cs3)||(cs1 == cs4 && cs1 == cs7)||(cs1 == cs5 && cs1 == cs9) ) && cs1 != ""){// logica do jogo
         vencedor = cs1;
         console.log(vencedor);
-    }else if(cs2 == cs5 && cs2 == cs8 && cs2 != ""){
+    }else if(cs2 == cs5 && cs2 == cs8 && cs2 != ""){// logica do jogo
         vencedor = cs2;
         console.log(vencedor);
-    }else if(cs4 == cs5 && cs4 == cs6 && cs4 != ""){
+    }else if(cs4 == cs5 && cs4 == cs6 && cs4 != ""){// logica do jogo
         vencedor = cs4;
         console.log(vencedor);
-    }else if(((cs9 == cs8 && cs9 == cs7)||(cs9 == cs6 && cs9 == cs3)) && cs9 != ""){
+    }else if(((cs9 == cs8 && cs9 == cs7)||(cs9 == cs6 && cs9 == cs3)) && cs9 != ""){// logica do jogo
         vencedor = cs9;
         console.log(vencedor);
-    }else if(cs3 == cs5 && cs3 == cs7 && cs3 != ""){
+    }else if(cs3 == cs5 && cs3 == cs7 && cs3 != ""){// logica do jogo
         vencedor = cs3;
         console.log(vencedor);
     }
 
-    if (vencedor != ""){
+    if(((cs1 && cs2 && cs3 && cs4 && cs5 && cs6 && cs7 && cs8 && cs9) != "") && vencedor == ""){
+        var velha = true;
+        finalJogo = true;
+      }else{
+        var velha = false;
+      }
+
+    if (vencedor != ""){ //verifica o vencedor e solta o alert
         finalJogo = true;
         
         await sleep(70);
         if(vencedor == "X"){
             vencedor = "O vencedor foi o Jogador 1 'X' " 
-            alert(vencedor)
+            alert(vencedor);
         }else if(vencedor == "O"){
             vencedor = "O vencedor foi o Jogador 2 'O' "
-            alert(vencedor)
+            alert(vencedor);
         }
-       
-
+    }else if(velha == true){
+        await sleep(70);
+        vencedor = "Deu Velha!"
+        alert(vencedor);
     }
 }
-function sleep(ms){
+function sleep(ms){ //atrasa o alert em 70ms fazendo o html carregar antes.
  return new Promise(resolve => setTimeout(resolve, ms));
 }

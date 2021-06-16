@@ -9,13 +9,18 @@ var finalJogo = false;
 atualizar();
 iniciarTabuleiro();
 
+function reiniciar(){
+    var reload = document.getElementsByClassName("reiniciar");
+    reload[0].addEventListener("click",window.location.reload());
+}
+
 function mudaBackground() {
     if(jogadorDaVez == jogador1){
         divJ1.style.backgroundColor = "rgb(96, 190, 77)";
-        divJ2.style.backgroundColor = "white";
+        divJ2.style.backgroundColor = "rgba(240, 240, 240, 0)";
     }else{
         divJ2.style.backgroundColor = "rgb(96, 190, 77)";
-        divJ1.style.backgroundColor = "white";
+        divJ1.style.backgroundColor = "rgba(240, 240, 240, 0)";
     }
 }
 
@@ -32,6 +37,7 @@ function atualizar(){
         jogador.setAttribute("src","./image/O.jpg");
         mudaBackground()
     }
+    vencedor();
 }
 
 function iniciarTabuleiro(){
@@ -52,20 +58,58 @@ function iniciarTabuleiro(){
                 }
             }
             atualizar();
+            
         });
     }
 }
-function reiniciar(){
-    var limpador = document.querySelectorAll("div.tabuleiro img");
-   for(let i = 0; i < limpador.length; i++){
-    limpador[i].setAttribute("src","");
-    
-   }
-    
-   var limpadorJ = document.querySelectorAll("div.tabuleiro jogada");
-   for(let i = 0; i < limpador.length; i++){
-    limpadorJ[i].setAttribute("jogada","");
-    
-   }
-  
+async function vencedor(){
+
+    var cs1 = document.getElementById("cs1").getAttribute("jogada");
+    var cs2 = document.getElementById("cs2").getAttribute("jogada");
+    var cs3 = document.getElementById("cs3").getAttribute("jogada");
+
+    var cs4 = document.getElementById("cs4").getAttribute("jogada");
+    var cs5 = document.getElementById("cs5").getAttribute("jogada");
+    var cs6 = document.getElementById("cs6").getAttribute("jogada");
+
+    var cs7 = document.getElementById("cs7").getAttribute("jogada");
+    var cs8 = document.getElementById("cs8").getAttribute("jogada");
+    var cs9 = document.getElementById("cs9").getAttribute("jogada");
+
+    var vencedor = "";
+
+    if(((cs1 == cs2 && cs1 == cs3)||(cs1 == cs4 && cs1 == cs7)||(cs1 == cs5 && cs1 == cs9) ) && cs1 != ""){
+        vencedor = cs1;
+        console.log(vencedor);
+    }else if(cs2 == cs5 && cs2 == cs8 && cs2 != ""){
+        vencedor = cs2;
+        console.log(vencedor);
+    }else if(cs4 == cs5 && cs4 == cs6 && cs4 != ""){
+        vencedor = cs4;
+        console.log(vencedor);
+    }else if(((cs9 == cs8 && cs9 == cs7)||(cs9 == cs6 && cs9 == cs3)) && cs9 != ""){
+        vencedor = cs9;
+        console.log(vencedor);
+    }else if(cs3 == cs5 && cs3 == cs7 && cs3 != ""){
+        vencedor = cs3;
+        console.log(vencedor);
+    }
+
+    if (vencedor != ""){
+        finalJogo = true;
+        
+        await sleep(70);
+        if(vencedor == "X"){
+            vencedor = "O vencedor foi o Jogador 1 'X' " 
+            alert(vencedor)
+        }else if(vencedor == "O"){
+            vencedor = "O vencedor foi o Jogador 2 'O' "
+            alert(vencedor)
+        }
+       
+
+    }
+}
+function sleep(ms){
+ return new Promise(resolve => setTimeout(resolve, ms));
 }

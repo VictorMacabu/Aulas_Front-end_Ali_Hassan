@@ -37,7 +37,7 @@ function atualizar(){
         jogador.setAttribute("src","./image/O.jpg");
         mudaBackground()
     }
-    vencedor();
+    
 }
 
 function iniciarTabuleiro(){
@@ -58,7 +58,7 @@ function iniciarTabuleiro(){
                 }
             }
             atualizar();
-            
+            vencedor();
         });
     }
 }

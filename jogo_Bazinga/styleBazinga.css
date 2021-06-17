@@ -1,0 +1,56 @@
+.titulo{
+    text-align: center;
+}
+.jogadaAtual{
+    text-align: center;
+    height: 300px;
+    width: 800px;
+    background-color: blue;
+}
+.jogadasPossiveis{
+    display: flex;
+    justify-content: space-around;
+}
+.imgJogada1,.imgJogada2{
+    display: flex;  
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+}
+.jogadas1{
+    float: left;
+}
+.jogadas2{
+    float: right;
+}
+.imgJogada1{ 
+    float: left;   
+}.imgJogada2{ 
+    float: right;   
+}
+#pedra1,#pedra2{
+    background: url("./images/pedra.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+#papel1,#papel2{
+    background: url("./images/papel.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+#tesoura1,#tesoura2{
+    background: url("./images/tesoura.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+#lagarta1,#lagarta2{
+    background: url("./images/lagarta.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+#Spock1,#Spock2{
+    margin-top: 20px;
+    background: url("./images/Spock.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}

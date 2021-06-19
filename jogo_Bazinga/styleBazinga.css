@@ -4,8 +4,7 @@
 .jogadaAtual{
     text-align: center;
     height: 300px;
-    width: 800px;
-    background-color: blue;
+    background-color: rgba(76, 76, 85, 0.514);
 }
 .jogadasPossiveis{
     display: flex;

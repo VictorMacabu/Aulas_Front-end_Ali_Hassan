@@ -4,22 +4,28 @@
 .jogadaAtual{
     text-align: center;
     height: 300px;
+    padding: 20px;
     background-color: rgba(76, 76, 85, 0.514);
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 .jkp1,.jkp2{
-    display:inline-flex;
     height:90%;
-    width: 20%;
-    margin-top: 5px;
-    margin-left: 15%;
-    background-color: red;
-    
-    
+    width: 40%;
+    background-color: red;    
 }
 .jogadasPossiveis{
     display: flex;
     justify-content: space-around;
 }
+
+
+/*         v   jogadas   v         */
+
 .imgJogada1,.imgJogada2{
     display: flex;  
     height: 100px;
@@ -40,7 +46,6 @@
 #pedra1,#pedra2{
     background: url("./images/pedra.png");
     background-size: 100px;
-    background-repeat: no-repeat;
 }
 #papel1,#papel2{
     background: url("./images/papel.png");
@@ -50,12 +55,10 @@
 #tesoura1,#tesoura2{
     background: url("./images/tesoura.png");
     background-size: 100px;
-    background-repeat: no-repeat;
 }
 #lagarta1,#lagarta2{
     background: url("./images/lagarta.png");
     background-size: 100px;
-    background-repeat: no-repeat;
 }
 #Spock1,#Spock2{
     margin-top: 20px;

@@ -6,6 +6,16 @@
     height: 300px;
     background-color: rgba(76, 76, 85, 0.514);
 }
+.jkp1,.jkp2{
+    display:inline-flex;
+    height:90%;
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 15%;
+    background-color: red;
+    
+    
+}
 .jogadasPossiveis{
     display: flex;
     justify-content: space-around;

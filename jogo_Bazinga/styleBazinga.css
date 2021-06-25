@@ -4,13 +4,14 @@
 .jogadaAtual{
     text-align: center;
     height: 300px;
+    width: 80%;
     padding: 20px;
     background-color: rgba(76, 76, 85, 0.514);
     display: grid;
     grid-row: auto;
     grid-template-columns: auto auto;
     align-items: center;
-    justify-content: space-between;
+    justify-items: center;
     
 }
 .jkp1,.jkp2{
@@ -19,8 +20,10 @@
     background-color: red;    
 }
 .jogadasPossiveis{
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
+
 }
 
 

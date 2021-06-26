@@ -1,10 +1,33 @@
+body{
+    margin: 0;
+}
 .titulo{
     text-align: center;
 }
-.jogadaAtual{
-    text-align: center;
+.explicandoJogo{
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.painelJogo{
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: auto auto auto;
+    align-items: baseline;
+}
+.imgJogador1,.imgJogador2{
+    height: 200px;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+.imgJogador1{
+    margin: center;
+    background-image: url(./images/Raj.jpg);
+}.imgJogador2{
+    background-image: url(./images/Sheldon.jpg);    
+}
+.jogadaAtual{    
     height: 300px;
-    width: 80%;
     padding: 20px;
     background-color: rgba(76, 76, 85, 0.514);
     display: grid;
@@ -16,11 +39,11 @@
 }
 .jkp1,.jkp2{
     height:90%;
-    width: 40%;
+    width: 80%;
     background-color: red;    
 }
 .jogadasPossiveis{
-    margin-top: 10px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-around;
 

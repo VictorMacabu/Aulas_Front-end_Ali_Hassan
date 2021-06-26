@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="./styleBazinga.css" media="screen">
-    
+
     <title>BAZINGA!</title>
 </head>
+
 <body>
     <div class="titulo"><img src="./images/Bazinga.png" alt="BAZINGA"></div>
-<div class="qtdRodadas"></div>
-
-<div class="jogadaAtual">
-    <div class="jkp1"></div>
-    <div class="jkp2"></div>
-</div>
-
-<div class="jogadasPossiveis">
-
-    <div class="jogadas1">
-        <div class="imgJogada1" id="pedra1"></div>
-        <div class="imgJogada1" id="papel1"></div>
-        <div class="imgJogada1" id="tesoura1"></div>
-        <div class="imgJogada1" id="lagarta1"></div>
-        <div class="imgJogada1" id="Spock1"></div>    
+    <div class="qtdRodadas"></div>
+    <div class="explicandoJogo">No oitavo episodio da segunda temporada do seriado The Big Bang Theory, The Lizard-
+        Spock Expansion, Sheldon e Raj discutem qual dos dois é o melhor: o filme Saturn 3 ou a
+        série Deep Space 9. A sugestão de Raj para a resolução do impasse é uma disputa de
+        Pedra-Papel-Tesoura. Contudo, Sheldon argumenta que, se as partes envolvidas se
+        conhecem, entre 75% e 80% das disputas de Pedra-Papel-Tesoura terminam empatadas, e
+        então sugere o Pedra-Papel-Tesoura-Lagarto-Spock.
     </div>
-    <div class="jogadas2">
-        <div class="imgJogada2" id="pedra2"></div>
-        <div class="imgJogada2" id="papel2"></div>
-        <div class="imgJogada2" id="tesoura2"></div>
-        <div class="imgJogada2" id="lagarta2"></div>
-        <div class="imgJogada2" id="Spock2"></div>
+    <div class="painelJogo">
+        <div class="imgJogador1"></div>
+        <div class="jogadaAtual">
+            <div class="jkp1"></div>
+            <div class="jkp2"></div>
+        </div>
+        <div class="imgJogador2"></div>
+    </div>    
+    <div class="jogadasPossiveis">
+
+        <div class="jogadas1">
+            <div class="imgJogada1" id="pedra1"></div>
+            <div class="imgJogada1" id="papel1"></div>
+            <div class="imgJogada1" id="tesoura1"></div>
+            <div class="imgJogada1" id="lagarta1"></div>
+            <div class="imgJogada1" id="Spock1"></div>
+        </div>
+        <div class="jogadas2">
+            <div class="imgJogada2" id="pedra2"></div>
+            <div class="imgJogada2" id="papel2"></div>
+            <div class="imgJogada2" id="tesoura2"></div>
+            <div class="imgJogada2" id="lagarta2"></div>
+            <div class="imgJogada2" id="Spock2"></div>
+        </div>
     </div>
-</div>
+
+    <script src="bazinga.js"></script>
 </body>
+
 </html>

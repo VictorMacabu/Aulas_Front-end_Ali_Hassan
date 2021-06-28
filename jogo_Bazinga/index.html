@@ -13,7 +13,7 @@
 
 <body>
     <div class="titulo"><img src="./images/Bazinga.png" alt="BAZINGA"></div>
-    <div class="qtdRodadas"></div>
+
     <div class="explicandoJogo">
         No oitavo episodio da segunda temporada do seriado The Big Bang Theory, The Lizard-
         Spock Expansion, Sheldon e Raj discutem qual dos dois é o melhor: o filme Saturn 3 ou a
@@ -23,22 +23,37 @@
         então sugere o Pedra-Papel-Tesoura-Lagarto-Spock.
     </div>
     <div class="painelJogo">
-        <div class="imgJogador1" id="gArea1"></div>
+        <div class="imgJogador1" id="gArea1">
+
+        </div>
         <div class="jogadaAtual" id="gArea2">
             <div class="jkp1"></div>
             <div class="jkp2"></div>
         </div>
         <div class="imgJogador2" id="gArea3"></div>
-    </div>    
+    </div>
+    <div class="entrada">
+        <form action="">
+            <label for="txtJogadas" id="lblJogadas">Quantidade de rodadas:</label>
+            <input type="number" name="txtJogadas" id="qtdJogadas">
+            <input type="button" value="Jogar">
+        </form>
+        <div id="placar"></div>
+    </div>
+    <div id="jogadasFeitas">
+        <!-- Recebe as jogadas que o Raj fez seguindo a sequencia de input do usuario -->
+    </div>
+
     <div class="jogadasPossiveis">
 
-        <div class="jogadas1">
-            <div class="imgJogada1" id="pedra1"></div>
-            <div class="imgJogada1" id="papel1"></div>
-            <div class="imgJogada1" id="tesoura1"></div>
-            <div class="imgJogada1" id="lagarta1"></div>
-            <div class="imgJogada1" id="Spock1"></div>
+        <div class="jogadas">
+            <div class="imgJogada" id="pedra1" jogada="pedra"></div>
+            <div class="imgJogada" id="papel1" jogada="papel"></div>
+            <div class="imgJogada" id="tesoura1" jogada="tesoura"></div>
+            <div class="imgJogada" id="lagarta1" jogada="lagarta"></div>
+            <div class="imgJogada" id="Spock1" jogada="Spock"></div>
         </div>
+        <!-- 
         <div class="jogadas2">
             <div class="imgJogada2" id="pedra2"></div>
             <div class="imgJogada2" id="papel2"></div>
@@ -46,6 +61,7 @@
             <div class="imgJogada2" id="lagarta2"></div>
             <div class="imgJogada2" id="Spock2"></div>
         </div>
+        -->
     </div>
 
     <script src="bazinga.js"></script>

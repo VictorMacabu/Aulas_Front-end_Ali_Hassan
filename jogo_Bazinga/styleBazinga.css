@@ -1,5 +1,6 @@
 body{
     margin: 0;
+
 }
 .titulo{
     text-align: center;
@@ -57,8 +58,14 @@ form{
     margin-left: 20px;
 }
 #qtdJogadas{
-    width: 50px;
+    width: 35px;
     height: 20px;
+    border-radius: 5px;
+}
+#btnSelecionar{
+    height: 25px;
+    border-radius: 5px;
+
 }
 #placar{
     text-align: center;
@@ -70,8 +77,28 @@ form{
     justify-content: space-around;
 
 }
-
-
+.contPlay{
+    display: flex;
+    justify-content: center;
+}
+.iniciarJogo{
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    background-color: green;
+    color: aliceblue;
+    border-radius: 10px;
+    font-weight: 300; 
+}
+.reiniciarJogo{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    color: aliceblue;
+    border-radius: 10px;
+    font-weight: 300; 
+}
 /*         v   jogadas   v         */
 
 .imgJogada,.imgJogada2{
@@ -109,7 +136,7 @@ form{
     background-size: 100px;
 }
 #Spock1,#Spock2{
-    margin-top: 20px;
+    margin-top: 10px;
     background: url("./images/Spock.png");
     background-size: 100px;
     background-repeat: no-repeat;

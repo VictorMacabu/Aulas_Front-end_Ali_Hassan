@@ -1,32 +1,43 @@
 'use strict'
 
-var ptsRaj = 0;
-var ptsSheldon = 0;
-var placarAtual = `${ptsRaj} X ${ptsSheldon}`;
+let ptsRaj = 0;
+let ptsSheldon = 0;
+let placarAtual = `${ptsRaj} X ${ptsSheldon}`;
 
-var qtdJogadas = 0;
-var jogadas = document.getElementsByClassName('imgJogada');
+let qtdJogadas = 0;
+let jogadas = document.getElementsByClassName('imgJogada');
 
+let selecionar = document.getElementById("btnSelecionar");
 let jogadasFeitas= [];
 
-var placar = document.getElementById('placar').innerHTML = placarAtual;
+placar();
+rodadas();
 
-function rodadas() {
-      let selecionar = document.getElementById("btnSelecionar");
-      selecionar.addEventListener("click",qtdJogadas = document.getElementById("qtdJogadas").value);
+function placar(){ // atualiza o mostrador do placar 
+    document.getElementById('placar').innerHTML = placarAtual;
+}
+
+function numJogadas(){
+    qtdJogadas = document.getElementById("qtdJogadas").value
+    return qtdJogadas;
+}
+function rodadas() { // verifica as jogadas e adiciona na tela
+       //seleciona a quantidade de jogadas
+      selecionar.addEventListener("click", numJogadas);
+      
         if(qtdJogadas > 0){
             let jogadaAtual = document.getElementsByClassName("imgJogada").addEventListener("click",getAttribute("jogada"));
-            let exibirJogada = `[ ${this.jogadaAtual} ]`;
+            let exibirJogada = `[ ${jogadaAtual} ]`;
             for(let i = 0;i < qtdJogadas; i++){
-                
                 document.getElementById("jogadasFeitas").innerHTML = exibirJogada;
                 this.exibirJogada += this.exibirJogada;
             }
         }
 }
 
-function reiniciar(){
-    var reload = document.getElementsByClassName("reiniciarJogo");
-    reload[0].addEventListener("click",window.location.reload());
+
+
+    document.getElementsByClassName("reiniciarJogo")[0].onclick = function reload(){
+    window.location.reload();
     console.log("reload")
 }

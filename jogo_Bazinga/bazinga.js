@@ -8,6 +8,7 @@ let qtdJogadas = 0;
 let jogadas = document.getElementsByClassName('imgJogada');
 
 let selecionar = document.getElementById("btnSelecionar");
+let exibirJogada = document.getElementById("jogadasFeitas").innerHTML;
 let jogadasFeitas= [];
 
 placar();
@@ -26,10 +27,14 @@ function rodadas() { // verifica as jogadas e adiciona na tela
       selecionar.addEventListener("click", numJogadas);
       
         if(qtdJogadas > 0){
-            let jogadaAtual = document.getElementsByClassName("imgJogada").addEventListener("click",getAttribute("jogada"));
-            let exibirJogada = `[ ${jogadaAtual} ]`;
+            var jogadasPossiveis = document.getElementsByClassName("imgJogada");
+            jogadaAtual = jogadasPossiveis[0].addEventListener("click",getAttribute("jogada"));
+            jogadaAtual = jogadasPossiveis[1].addEventListener("click",getAttribute("jogada"));
+            jogadaAtual = jogadasPossiveis[2].addEventListener("click",getAttribute("jogada"));
+            jogadaAtual = jogadasPossiveis[3].addEventListener("click",getAttribute("jogada"));
+            jogadaAtual = jogadasPossiveis[4].addEventListener("click",getAttribute("jogada"));
+            exibirJogada.innerHTML = `[ ${jogadaAtual} ]`;
             for(let i = 0;i < qtdJogadas; i++){
-                document.getElementById("jogadasFeitas").innerHTML = exibirJogada;
                 this.exibirJogada += this.exibirJogada;
             }
         }

@@ -5,39 +5,42 @@ let ptsSheldon = 0;
 let placarAtual = `${ptsRaj} X ${ptsSheldon}`;
 
 let qtdJogadas = 0;
-let jogadas = document.getElementsByClassName('imgJogada');
+let jogadas = document.getElementById('jogadas');
 
 let selecionar = document.getElementById("btnSelecionar");
 let exibirJogada = document.getElementById("jogadasFeitas").innerHTML;
+
 let jogadasFeitas= [];
+var jogadaAtual ='';
 
 placar();
-rodadas();
+
 
 function placar(){ // atualiza o mostrador do placar 
     document.getElementById('placar').innerHTML = placarAtual;
 }
 
-function numJogadas(){
+function numJogadas(){// recebe a quantidade de jogadas selecionadas e põe na tela
     qtdJogadas = document.getElementById("qtdJogadas").value
-    return qtdJogadas;
-}
-function rodadas() { // verifica as jogadas e adiciona na tela
-       //seleciona a quantidade de jogadas
-      selecionar.addEventListener("click", numJogadas);
-      
+    console.log( qtdJogadas);
         if(qtdJogadas > 0){
-            var jogadasPossiveis = document.getElementsByClassName("imgJogada");
-            jogadaAtual = jogadasPossiveis[0].addEventListener("click",getAttribute("jogada"));
-            jogadaAtual = jogadasPossiveis[1].addEventListener("click",getAttribute("jogada"));
-            jogadaAtual = jogadasPossiveis[2].addEventListener("click",getAttribute("jogada"));
-            jogadaAtual = jogadasPossiveis[3].addEventListener("click",getAttribute("jogada"));
-            jogadaAtual = jogadasPossiveis[4].addEventListener("click",getAttribute("jogada"));
-            exibirJogada.innerHTML = `[ ${jogadaAtual} ]`;
+            jogadas.addEventListener('click',function(j){
+              jogadaAtual = j.target.this.jogada;
+              exibirJogada.innerHTML = `[ ${jogadaAtual} ] `;
+            });
+           
+            
             for(let i = 0;i < qtdJogadas; i++){
                 this.exibirJogada += this.exibirJogada;
             }
         }
+}
+selecionar.addEventListener("click", numJogadas);
+
+ function rodadas() { // verifica as jogadas e adiciona na tela
+       //seleciona a quantidade de jogadas
+      
+     
 }
 
 

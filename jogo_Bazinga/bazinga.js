@@ -7,7 +7,7 @@ let placarAtual = `${ptsRaj} X ${ptsSheldon}`;
 let qtdJogadas = 0;
 let jogadas = document.querySelectorAll(".imgJogada");
 
-let selecionar = document.getElementById("btnSelecionar");
+const selecionar = document.getElementById("btnSelecionar");
 let exibirJogada = document.getElementById("jogadasFeitas");
 
 let jogadasFeitas = [];
@@ -27,44 +27,61 @@ function placar() { // atualiza o mostrador do placar
 }
 
 function selectJogada() {
-    if((qtdJogadas > 0)&&( pedra.onclick )){
+ 
         jogadas[0].addEventListener('click', function () {
-        jogadaAtual = jogadas[0].getAttribute("jogada");
-        exibirJogada.innerHTML = ` [ ${jogadaAtual} ]`;
-        qtdJogadas--;
-    })
-};
-if((qtdJogadas > 0)&&( papel.onclick )){
-    jogadas[1].addEventListener('click', function () {
-        jogadaAtual = jogadas[1].getAttribute("jogada");
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        qtdJogadas--;
-    });
+            jogadaAtual = jogadas[0].getAttribute("jogada");
+            exibirJogada.innerHTML = ` [ ${jogadaAtual} ]`;
+            jogadasFeitas[qtdJogadas] += jogadaAtual
+            console.log(jogadasFeitas)
+            regraJogadas(qtdJogadas)
+            qtdJogadas--;
+        })
+    
+   
+        jogadas[1].addEventListener('click', function () {
+            jogadaAtual = jogadas[1].getAttribute("jogada");
+            exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
+            jogadasFeitas[qtdJogadas] += jogadaAtual
+            console.log(jogadasFeitas)
+            regraJogadas(qtdJogadas)
+            qtdJogadas--;
+        });
+    
+   
+        jogadas[2].addEventListener('click', function () {
+            jogadaAtual = jogadas[2].getAttribute("jogada");
+            exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
+            jogadasFeitas[qtdJogadas] += jogadaAtual
+            console.log(jogadasFeitas)
+            regraJogadas(qtdJogadas)
+            qtdJogadas--;
+        });
+    
+   
+        jogadas[3].addEventListener('click', function () {
+            jogadaAtual = jogadas[3].getAttribute("jogada");
+            exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
+            jogadasFeitas[qtdJogadas] += jogadaAtual
+            console.log(jogadasFeitas)
+            regraJogadas(qtdJogadas)
+            qtdJogadas--;
+        });
+    
+     
+        jogadas[4].addEventListener('click', function () {
+            jogadaAtual = jogadas[4].getAttribute("jogada");
+            exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
+            jogadasFeitas[qtdJogadas] += jogadaAtual
+            console.log(jogadasFeitas)
+            regraJogadas(qtdJogadas)
+            qtdJogadas--;
+        });
+    
 }
-    if((qtdJogadas > 0)&&( tesoura.onclick )){
-    jogadas[2].addEventListener('click', function () {
-        jogadaAtual = jogadas[2].getAttribute("jogada");
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        qtdJogadas--;
-    });
-}
-    if((qtdJogadas > 0)&&( lagarta.onclick )){
-    jogadas[3].addEventListener('click', function () {
-        jogadaAtual = jogadas[3].getAttribute("jogada");
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        qtdJogadas--;
-    });
-}
-    if((qtdJogadas > 0)&&( Spock.onclick )){
-    jogadas[4].addEventListener('click', function () {
-        jogadaAtual = jogadas[4].getAttribute("jogada");
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        qtdJogadas--;
-    });
-}
-}
-function regraJogadas(qtdJogadas){ //validar nas regras
-    if(qtdJogadas <= 0 ){
+function regraJogadas(qtdJogadas) { //validar nas regras
+    if (qtdJogadas === 0) {
+        alert("Suas jogadas acabaram, inicie o jogo")
+    }else if( qtdJogadas < 0){
         alert("Número de jogadas inválido")
     }
 }
@@ -77,7 +94,6 @@ function numJogadas() {// recebe a quantidade de jogadas selecionadas e põe na 
         exibirJogada.innerHTML = ' Jogadas: ';
         while (qtdJogadas > 0) {
             selectJogada()
-            qtdJogadas--;
         }
     }
 }

@@ -14,7 +14,7 @@ function reiniciar(){
     reload[0].addEventListener("click",window.location.reload());
 }
 
-function mudaBackground() {
+function mudaJogador() {
     if(jogadorDaVez == jogador1){
         divJ1.style.backgroundColor = "rgb(96, 190, 77)";
         divJ2.style.backgroundColor = "rgba(240, 240, 240, 0)";
@@ -31,11 +31,11 @@ function atualizar(){
     if(jogadorDaVez == jogador1){
         var jogador = document.querySelectorAll("div#jogador1 img")[0];
         jogador.setAttribute("src","./image/X.jpg");
-        mudaBackground()
+        mudaJogador()
     }else{
         var jogador = document.querySelectorAll("div#jogador2 img")[0];
         jogador.setAttribute("src","./image/O.jpg");
-        mudaBackground()
+        mudaJogador()
     }
     
 }

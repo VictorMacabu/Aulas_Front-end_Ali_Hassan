@@ -4,6 +4,7 @@ body{
 }
 .titulo{
     text-align: center;
+    background-color: red;
 }
 .explicandoJogo{
     margin-bottom: 10px;
@@ -55,7 +56,7 @@ body{
 }
 form{
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 #qtdJogadas{
     width: 35px;
@@ -70,6 +71,9 @@ form{
 #placar{
     text-align: center;
     font-size: 50px;
+}
+#jogadasFeitas{
+    margin-left: 30px;
 }
 .jogadasPossiveis{
     margin-top: 30px;

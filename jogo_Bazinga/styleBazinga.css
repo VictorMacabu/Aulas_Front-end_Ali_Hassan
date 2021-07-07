@@ -35,7 +35,7 @@ body{
     background-image: url(./images/Sheldon.jpg);    
 }
 .jogadaAtual{    
-    height: 300px;
+    height: 200px;
     padding: 20px;
     background-color: rgba(201, 201, 212, 0.26);
     display: grid;
@@ -46,8 +46,8 @@ body{
     
 }
 .jkp1,.jkp2{
-    height:90%;
-    width: 80%;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: rgb(255, 255, 255);    
 }
 
@@ -105,7 +105,7 @@ form{
 }
 /*         v   jogadas   v         */
 
-.imgJogada,.imgJogada2{
+.imgJogada{
     display: flex;  
     height: 100px;
     width: 100px;

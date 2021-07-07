@@ -24,6 +24,22 @@ const lagarta = document.getElementById("lagarta1").getAttribute("jogada"); // j
 const Spock = document.getElementById("Spock1").getAttribute("jogada");     // jogadas
 const arrayJogadas = [pedra, papel, tesoura, lagarta, Spock];               // jogadas
 
+const imgPedra = "./images/pedra.png";
+const imgPapel = "./images/papel.png";
+const imgTesoura = "./images/tesoura.png";
+const imgLagarta = "./images/lagarta.png";
+const imgSpock = "./images/Spock.png";
+
+let img_jkp2 = document.createElement("IMG"); //img da jogada jkp2
+img_jkp2.src = "";
+img_jkp2.style.width = "200px";
+img_jkp2.style.height = "200px";
+
+let img_jkp1 = document.createElement("IMG"); //img da jogada jkp1
+img_jkp1.src = "";
+img_jkp1.style.width = "200px";
+img_jkp1.style.height = "200px";
+
 placar();
 
 function placar() { // atualiza o mostrador do placar 
@@ -57,26 +73,110 @@ function random(min, max) { // recebe o indice do array para fazer a escolha de 
 function comparaJogadas(j1, j2) {//regras do jogo
 
     // vencedor j1
-    if ((j1 === pedra) && (j2 === tesoura) || (j1 === pedra) && (j2 === lagarta)) {// 3. a pedra esmaga o lagarto; 10. a pedra quebra a tesoura.
+    if ((j1 == pedra) && (j2 == tesoura) || (j1 == pedra) && (j2 == lagarta)) {// 3. a pedra esmaga o lagarto; 10. a pedra quebra a tesoura.
         return vencedor = j1;
-    } else if ((j1 === papel) && (j2 === pedra) || (j1 === papel) && (j2 === Spock)) { // 2. o papel embrulha a pedra; 8. o papel contesta Spock;
+    } else if ((j1 == papel) && (j2 == pedra) || (j1 == papel) && (j2 == Spock)) { // 2. o papel embrulha a pedra; 8. o papel contesta Spock;
         return vencedor = j1;
-    } else if ((j1 === tesoura) && (j2 === papel) || (j1 === tesoura) && (j2 === lagarta)) {// 1. a tesoura corta o papel; 6. a tesoura decapita o lagarto;
+    } else if ((j1 == tesoura) && (j2 == papel) || (j1 == tesoura) && (j2 == lagarta)) {// 1. a tesoura corta o papel; 6. a tesoura decapita o lagarto;
         return vencedor = j1;
-    } else if ((j1 === lagarta) && (j2 === Spock) || (j1 === lagarta) && (j2 === papel)) {// 4. o lagarto envenena Spock; 7. o lagarto come o papel;
+    } else if ((j1 == lagarta) && (j2 == Spock) || (j1 == lagarta) && (j2 == papel)) {// 4. o lagarto envenena Spock; 7. o lagarto come o papel;
         return vencedor = j1;
-    } else if ((j1 === Spock) && (j2 === tesoura) || (j1 === Spock) && (j2 === pedra)) {// 5. Spock destrói a tesoura; 9. Spock vaporiza a pedra;
+    } else if ((j1 == Spock) && (j2 == tesoura) || (j1 == Spock) && (j2 == pedra)) {// 5. Spock destrói a tesoura; 9. Spock vaporiza a pedra;
         return vencedor = j1;
     }
     // empate
-    else if ((j2 === pedra) && (j1 === pedra) || (j2 === tesoura) && (j1 === tesoura) || (j2 === lagarta) && (j1 === lagarta) ||
-        (j1 === papel) && (j2 === papel) || (j2 === Spock) && (j1 === Spock)) {
+    else if ((j2 == pedra) && (j1 == pedra) || (j2 == tesoura) && (j1 == tesoura) || (j2 == lagarta) && (j1 == lagarta) ||
+        (j1 == papel) && (j2 == papel) || (j2 == Spock) && (j1 == Spock)) {
         return vencedor = 'Empate';
     }
     // vencedor j2  -----  if 
-    else if ((vencedor != j1) && (vencedor != 'Empate')) {
+    else if (vencedor = '') {
         return vencedor = j2
     }
+}
+
+function startJogo() {
+    for (let i = jogadasRaj.length; i != 0; i--) {
+
+        comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
+
+
+        if (vencedor == jogadasRaj[i]) {
+
+            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])//muda a img da jogada
+
+            ptsRaj += 1;   // atualiza placar                              
+            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
+            placar(); // atualiza placar
+            alert("Sheldon diz: Raj trapaceou!")
+
+        } else if (vencedor == jogadasSheldon[i]) {
+
+            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])// muda a img da jogada
+
+            ptsSheldon += 1; // atualiza placar
+            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
+            placar(); // atualiza placar
+            alert("Sheldon diz: BAZINGA!")
+
+        } else if (vencedor == 'Empate') {
+
+            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])// muda a img da jogada
+
+            ptsRaj += 1; // atualiza placar
+            ptsSheldon += 1; // atualiza placar
+            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
+            placar(); // atualiza placar
+            alert("Sheldon diz: De novo!")
+        }
+
+    }
+}
+
+function escolhaIMG(jog1, jog2) {
+    //     imgs Raj
+    if (jog1 == 'pedra') {
+        img_jkp1.src = imgPedra
+        displayJogadaRaj.appendChild(img_jkp1);
+    }
+    if (jog1 == 'papel') {
+        img_jkp1.src = imgPapel
+        displayJogadaRaj.appendChild(img_jkp1);
+    }
+    if (jog1 == 'tesoura') {
+        img_jkp1.src = imgTesoura
+        displayJogadaRaj.appendChild(img_jkp1);
+    }
+    if (jog1 == 'lagarta') {
+        img_jkp1.src = imgLagarta
+        displayJogadaRaj.appendChild(img_jkp1);
+    }
+    if (jog1 == 'Spoke') {
+        img_jkp1.src = imgSpock
+        displayJogadaRaj.appendChild(img_jkp1);
+    }
+    //     imgs Sheldon 
+    if (jog2 == 'pedra') {
+        img_jkp2.src = imgPedra
+        displayJogadaSheldon.appendChild(img_jkp2);
+    }
+    if (jog2 == 'papel') {
+        img_jkp2.src = imgPapel
+        displayJogadaSheldon.appendChild(img_jkp2);
+    }
+    if (jog2 == 'tesoura') {
+        img_jkp2.src = imgTesoura
+        displayJogadaSheldon.appendChild(img_jkp2);
+    }
+    if (jog2 == 'lagarta') {
+        img_jkp2.src = imgLagarta
+        displayJogadaSheldon.appendChild(img_jkp2);
+    }
+    if (jog2 == 'Spock') {
+        img_jkp2.src = imgSpock
+        displayJogadaSheldon.appendChild(img_jkp2);
+    }
+
 }
 
 jogadas[0].addEventListener('click', () => { // pedra img
@@ -153,43 +253,14 @@ jogadas[4].addEventListener('click', () => { // Spock img
     }
 });
 
-
-
 selecionar.addEventListener("click", numJogadas);
 
-
-
 document.getElementsByClassName("iniciarJogo")[0].onclick = () => {
-    alert("inicio jogada")
-    for (let i = jogadasRaj.length; i != 0; i--) {
-
-        displayJogadaRaj.innerHTML = jogadasRaj[i];
-        displayJogadaSheldon.innerHTML = jogadasSheldon[i];
-
-        comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
-        if (vencedor == jogadasRaj[i]) {
-            ptsRaj += 1;
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`;
-            placar();
-            alert("Sheldon diz: Raj trapaceou!")
-        } else if (vencedor == jogadasSheldon[i]) {
-            ptsSheldon += 1;
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`;
-            placar();
-            alert("Sheldon diz: BAZINGA!")
-        } else if (vencedor == 'empate') {
-            ptsRaj += 1;
-            ptsSheldon += 1;
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`;
-            placar();
-            alert("Sheldon diz: De novo!")
-        }
-
-    }
+    alert("inicio do jogo")
+    startJogo();
 }
 
 document.getElementsByClassName("reiniciarJogo")[0].onclick = function reload() {
     window.location.reload();
     console.log("reload")
 }
-

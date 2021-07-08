@@ -2,7 +2,6 @@
 
 let ptsRaj = 0;
 let ptsSheldon = 0;
-let placarAtual = `${ptsRaj} X ${ptsSheldon}`;
 
 let qtdJogadas = 0;
 let jogadas = document.querySelectorAll(".imgJogada");
@@ -40,10 +39,10 @@ img_jkp1.src = "";
 img_jkp1.style.width = "200px";
 img_jkp1.style.height = "200px";
 
-placar();
+placar(ptsRaj,ptsSheldon);
 
-function placar() { // atualiza o mostrador do placar 
-    document.getElementById('placar').innerHTML = placarAtual;
+function placar(ptsRaj,ptsSheldon) { // atualiza o mostrador do placar 
+    document.getElementById('placar').innerHTML = `${ptsRaj} X ${ptsSheldon}`;
 }
 
 function regraJogadas(qtdJogadas) { //validar qtd jogadas nas regras
@@ -84,53 +83,62 @@ function comparaJogadas(j1, j2) {//regras do jogo
     } else if ((j1 == Spock) && (j2 == tesoura) || (j1 == Spock) && (j2 == pedra)) {// 5. Spock destrói a tesoura; 9. Spock vaporiza a pedra;
         return vencedor = j1;
     }
+    // vencedor j2  -----  
+    if ((j2 == pedra) && (j1 == tesoura) || (j2 == pedra) && (j1 == lagarta)) {// 3. a pedra esmaga o lagarto; 10. a pedra quebra a tesoura.
+        return vencedor = j2;
+    } else if ((j2 == papel) && (j1 == pedra) || (j2 == papel) && (j1 == Spock)) { // 2. o papel embrulha a pedra; 8. o papel contesta Spock;
+        return vencedor = j2;
+    } else if ((j2 == tesoura) && (j1 == papel) || (j2 == tesoura) && (j1 == lagarta)) {// 1. a tesoura corta o papel; 6. a tesoura decapita o lagarto;
+        return vencedor = j2;
+    } else if ((j2 == lagarta) && (j1 == Spock) || (j2 == lagarta) && (j1 == papel)) {// 4. o lagarto envenena Spock; 7. o lagarto come o papel;
+        return vencedor = j2;
+    } else if ((j2 == Spock) && (j1 == tesoura) || (j2 == Spock) && (j1 == pedra)) {// 5. Spock destrói a tesoura; 9. Spock vaporiza a pedra;
+        return vencedor = j2;
+    }
     // empate
     else if ((j2 == pedra) && (j1 == pedra) || (j2 == tesoura) && (j1 == tesoura) || (j2 == lagarta) && (j1 == lagarta) ||
         (j1 == papel) && (j2 == papel) || (j2 == Spock) && (j1 == Spock)) {
         return vencedor = 'Empate';
     }
-    // vencedor j2  -----  if 
-    else if (vencedor = '') {
-        return vencedor = j2
-    }
+
 }
 
 function startJogo() {
-    for (let i = jogadasRaj.length; i != 0; i--) {
+    for (let i = 0; i <= jogadasRaj.length; i++) {
 
         comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
-
-
+        escolhaIMG(jogadasRaj[i], jogadasSheldon[i])    //muda a img da jogada
+        console.log("comparando jogada " + i)
         if (vencedor == jogadasRaj[i]) {
-
-            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])//muda a img da jogada
-
             ptsRaj += 1;   // atualiza placar                              
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
-            placar(); // atualiza placar
-            alert("Sheldon diz: Raj trapaceou!")
+            placar(ptsRaj,ptsSheldon); // atualiza placar
+            /*await sleep(70);*/
+            console.log(jogadasRaj[i], jogadasSheldon[i])
+            window.onload = () => {alert("Sheldon diz: Raj trapaceou!")}
 
         } else if (vencedor == jogadasSheldon[i]) {
 
-            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])// muda a img da jogada
-
             ptsSheldon += 1; // atualiza placar
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
-            placar(); // atualiza placar
-            alert("Sheldon diz: BAZINGA!")
+            placar(ptsRaj,ptsSheldon); // atualiza placar
+            /*await sleep(70);*/
+            console.log(jogadasRaj[i], jogadasSheldon[i])
+            window.onload = () => {alert("Sheldon diz: BAZINGA!")}
 
         } else if (vencedor == 'Empate') {
 
-            escolhaIMG(jogadasRaj[i], jogadasSheldon[i])// muda a img da jogada
-
             ptsRaj += 1; // atualiza placar
             ptsSheldon += 1; // atualiza placar
-            placarAtual = `${ptsRaj} X ${ptsSheldon}`; // atualiza placar
-            placar(); // atualiza placar
-            alert("Sheldon diz: De novo!")
+            placar(ptsRaj,ptsSheldon); // atualiza placar
+            /*   await sleep(70);*/
+            console.log(jogadasRaj[i], jogadasSheldon[i])
+            window.onload = () => {alert("Sheldon diz: De novo!")}
         }
 
     }
+}
+
+function sleep(ms) { //atrasa o alert em 70ms fazendo o html carregar antes.
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function escolhaIMG(jog1, jog2) {

@@ -14,8 +14,9 @@ body{
 }
 .painelJogo{
     display: grid;
-    align-items: center;
     grid-template-areas: "a1 a2 a2 a3";
+    grid-gap: 50px;
+    padding: 10px;
 }
 
 #gArea1{grid-area: a1;}
@@ -24,7 +25,8 @@ body{
 
 .imgJogador1,.imgJogador2{
     height: 250px;
-    margin: 0;
+    width: 350px;
+    margin-left: 8px;
     border: 2px black solid;
     background-repeat: no-repeat;
 }

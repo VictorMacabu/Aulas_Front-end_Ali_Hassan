@@ -1,36 +1,52 @@
-body{
+body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.titulo{
+
+.titulo {
     text-align: center;
     background-color: red;
 }
-.painelJogo{
+
+.painelJogo {
     display: grid;
     justify-content: center;
     grid-template-areas: "a1 a2 a2 a3";
     grid-gap: 40px;
     padding: 10px;
+    border-radius: 5px;
 }
 
-#gArea1{grid-area: a1;}
-#gArea2{grid-area: a2;}
-#gArea3{grid-area: a3;}
+#gArea1 {
+    grid-area: a1;
+}
 
-.imgJogador1,.imgJogador2{
+#gArea2 {
+    grid-area: a2;
+}
+
+#gArea3 {
+    grid-area: a3;
+}
+
+.imgJogador1, .imgJogador2 {
     height: 250px;
     width: 350px;
+    border-radius: 5px;
     margin-left: 8px;
     border: 2px black solid;
     background-repeat: no-repeat;
 }
-.imgJogador1{
+
+.imgJogador1 {
     background-image: url(./images/Raj.jpg);
-}.imgJogador2{
-    background-image: url(./images/Sheldon.jpg);    
 }
-.jogadaAtual{    
+
+.imgJogador2 {
+    background-image: url(./images/Sheldon.jpg);
+}
+
+.jogadaAtual {
     height: 200px;
     padding: 20px;
     background-color: rgba(201, 201, 212, 0.26);
@@ -40,116 +56,200 @@ body{
     grid-template-columns: auto auto;
     align-items: center;
     justify-items: end;
-    
-}
-.jkp1,.jkp2{
-    background-color: rgb(255, 255, 255);    
 }
 
-.entrada{
+.jkp1, .jkp2 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.entrada {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-form{
+
+form {
     display: inline-block;
     margin-left: 30px;
 }
-#qtdJogadas{
+
+#qtdJogadas {
     width: 35px;
     height: 20px;
     border-radius: 5px;
 }
-#btnSelecionar{
+
+#btnSelecionar {
     height: 25px;
     border-radius: 5px;
-
 }
-#placar{
+
+#placar {
     text-align: center;
     font-size: 50px;
 }
-#jogadasFeitas{
+
+#jogadasFeitas {
     margin-left: 30px;
 }
-.jogadasPossiveis{
+
+.jogadasPossiveis {
     display: flex;
     justify-content: space-around;
-
 }
-.contPlay{
+
+.contPlay {
     display: flex;
     justify-content: center;
 }
-.iniciarJogo{
+
+.iniciarJogo {
     text-align: center;
     width: 200px;
     height: 30px;
     background-color: green;
     color: aliceblue;
     border-radius: 10px;
-    font-weight: 400; 
+    font-weight: 400;
 }
-.reiniciarJogo{
+
+.reiniciarJogo {
     text-align: center;
     width: 100px;
     height: 30px;
     background-color: red;
     color: aliceblue;
     border-radius: 10px;
-    font-weight: 400; 
+    font-weight: 400;
 }
+
 /*         v   jogadas   v         */
 
-.imgJogada{
-    display: flex;  
+.imgJogada {
+    display: flex;
     height: 100px;
     width: 100px;
     margin-left: 15px;
 }
-.jogadas{
+
+.jogadas {
     float: left;
 }
-.jogadas2{
+
+.jogadas2 {
     float: right;
 }
-.imgJogada{ 
-    float: left;   
-}.imgJogada2{ 
-    float: right;   
+
+.imgJogada {
+    float: left;
 }
-#pedra1{
+
+.imgJogada2 {
+    float: right;
+}
+
+#pedra1 {
     background: url("./images/pedra.png");
     background-size: 100px;
 }
-#papel1{
+
+#papel1 {
     background: url("./images/papel.png");
     background-size: 100px;
     background-repeat: no-repeat;
 }
-#tesoura1{
+
+#tesoura1 {
     background: url("./images/tesoura.png");
     background-size: 100px;
 }
-#lagarta1{
+
+#lagarta1 {
     background: url("./images/lagarta.png");
     background-size: 100px;
 }
-#Spock1{
+
+#Spock1 {
     margin-top: 10px;
     background: url("./images/Spock.png");
     background-size: 100px;
     background-repeat: no-repeat;
 }
-.conteinerRegras{
+
+.conteinerRegras {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.explicandoJogo{
+
+.explicandoJogo {
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 10px;
     margin-top: 30px;
-    display: inline-block;
     text-align: center;
+}
 
+@media screen and (max-width: 1464px) {
+    .imgJogador1 {
+        background-size:200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size:200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+} 
+@media screen and (max-width: 1115px) {   
+    .imgJogador1 {
+        background-size:150px 150px;
+        height: 150px;
+        width: 150px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size:150px 150px;
+        height: 150px;
+        width: 150px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .jogadaAtual {
+        height: auto;
+        padding: 20px;
+        background-color: rgba(201, 201, 212, 0.26);
+        display: grid;
+        grid-row: auto;
+        gap: 10px;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-items: end;
+    }
+    .imgJogada {
+        background-size:90px 90px;
+        height: 90px;
+        width: 90px;
+        margin-left: 20px;
+    }
+    #pedra1{
+        background-size:90px 90px;
+    }
+    #papel1{
+        background-size:90px 90px;
+    }
+    #tesoura1{
+        background-size:90px 90px;
+    }
+    #lagarta1{
+        background-size:90px 90px;
+    }
+    #Spock1{
+        background-size:90px 90px;
+    }
 }

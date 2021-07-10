@@ -9,7 +9,7 @@ let jogadas = document.querySelectorAll(".imgJogada");
 const selecionar = document.getElementById("btnSelecionar");
 let exibirJogada = document.getElementById("jogadasFeitas");
 let displayJogadaRaj = document.getElementsByClassName("jkp1")[0];
-let displayJogadaSheldon = document.getElementsByClassName("jkp2")[0];
+let displayJogadaSheldon = document.getElementsByClassName("jkp2")[0]; 
 
 let jogadasRaj = [];
 let jogadasSheldon = [];
@@ -31,13 +31,13 @@ const imgSpock = "./images/Spock.png";
 
 let img_jkp2 = document.createElement("IMG"); //img da jogada jkp2
 img_jkp2.src = "";
-img_jkp2.style.width = "200px";
-img_jkp2.style.height = "200px";
+img_jkp2.style.width = "auto";
+img_jkp2.style.height = "auto";
 
 let img_jkp1 = document.createElement("IMG"); //img da jogada jkp1
-img_jkp1.src = "";
-img_jkp1.style.width = "200px";
-img_jkp1.style.height = "200px";
+img_jkp1.src = ""; 
+img_jkp1.style.width = "auto";
+img_jkp1.style.height = "auto";
 
 placar(ptsRaj,ptsSheldon);
 
@@ -53,13 +53,14 @@ function regraJogadas(qtdJogadas) { //validar qtd jogadas nas regras
     }
 }
 
-function numJogadas() {// recebe a quantidade de jogadas selecionadas e põe na tela
+function numJogadas() {// recebe a quantidade de jogadas selecionadas 
     qtdJogadas = document.getElementById("qtdJogadas").value
     regraJogadas(qtdJogadas)
     console.log("iniciou jogadas com: " + qtdJogadas); //teste
 
     if (qtdJogadas > 0) {
         exibirJogada.innerHTML = ' Jogadas: ';
+        alert("Selecione suas jogadas e inicie o jogo!");
     }
 }
 
@@ -108,31 +109,31 @@ async function startJogo() {
 
         comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
         escolhaIMG(jogadasRaj[i], jogadasSheldon[i]);   //muda a img da jogada
-        console.log("comparando jogada " + i)
+        console.log("comparando jogada " + i);
         await sleep(500);
         if (vencedor == jogadasRaj[i]) {
             ptsRaj += 1;   // atualiza placar                              
             placar(ptsRaj,ptsSheldon); // atualiza placar
-            /*await sleep(70);*/
-            console.log(jogadasRaj[i], jogadasSheldon[i])
-            alert("Sheldon diz: Raj trapaceou!")
+            
+            console.log(jogadasRaj[i], jogadasSheldon[i]);
+            alert("Sheldon diz: Raj trapaceou!");
 
         } else if (vencedor == jogadasSheldon[i]) {
 
             ptsSheldon += 1; // atualiza placar
             placar(ptsRaj,ptsSheldon); // atualiza placar
-            /*await sleep(70);*/
-            console.log(jogadasRaj[i], jogadasSheldon[i])
-            alert("Sheldon diz: BAZINGA!")
+           
+            console.log(jogadasRaj[i], jogadasSheldon[i]);
+            alert("Sheldon diz: BAZINGA!");
 
         } else if (vencedor == 'Empate') {
 
             ptsRaj += 1; // atualiza placar
             ptsSheldon += 1; // atualiza placar
             placar(ptsRaj,ptsSheldon); // atualiza placar
-            /*   await sleep(70);*/
-            console.log(jogadasRaj[i], jogadasSheldon[i])
-            alert("Sheldon diz: De novo!")
+            
+            console.log(jogadasRaj[i], jogadasSheldon[i]); 
+            alert("Sheldon diz: De novo!");
         }
 
     }
@@ -207,9 +208,9 @@ jogadas[1].addEventListener('click', () => { // papel img
     jogadaAtual = papel;
     regraJogadas(qtdJogadas)
     if (qtdJogadas > 0) {
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        jogadasRaj[qtdJogadas - 1] = jogadaAtual
-        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)]
+        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`; //coloca na tela a jogada atual + as jogadas já feitas
+        jogadasRaj[qtdJogadas - 1] = jogadaAtual //jogadasRaj[] esta recebendo a jogada do click 
+        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)] //jogadasSheldon[] recebe uma jogada aleatória na mesma posição de jogadasRaj[atual] 
         console.log(jogadasRaj, jogadasSheldon)
 
         qtdJogadas--;
@@ -222,9 +223,9 @@ jogadas[2].addEventListener('click', () => { // tesoura img
     jogadaAtual = tesoura;
     regraJogadas(qtdJogadas)
     if (qtdJogadas > 0) {
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        jogadasRaj[qtdJogadas - 1] = jogadaAtual
-        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)]
+        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`; //coloca na tela a jogada atual + as jogadas já feitas
+        jogadasRaj[qtdJogadas - 1] = jogadaAtual //jogadasRaj[] esta recebendo a jogada do click 
+        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)] //jogadasSheldon[] recebe uma jogada aleatória na mesma posição de jogadasRaj[atual] 
         console.log(jogadasRaj, jogadasSheldon)
 
         qtdJogadas--;
@@ -237,9 +238,9 @@ jogadas[3].addEventListener('click', () => { // lagarta img
     jogadaAtual = lagarta;
     regraJogadas(qtdJogadas)
     if (qtdJogadas > 0) {
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        jogadasRaj[qtdJogadas - 1] = jogadaAtual
-        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)]
+        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`; //coloca na tela a jogada atual + as jogadas já feitas
+        jogadasRaj[qtdJogadas - 1] = jogadaAtual //jogadasRaj[] esta recebendo a jogada do click 
+        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)] //jogadasSheldon[] recebe uma jogada aleatória na mesma posição de jogadasRaj[atual] 
         console.log(jogadasRaj, jogadasSheldon)
 
         qtdJogadas--;
@@ -252,9 +253,9 @@ jogadas[4].addEventListener('click', () => { // Spock img
     jogadaAtual = Spock;
     regraJogadas(qtdJogadas)
     if (qtdJogadas > 0) {
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        jogadasRaj[qtdJogadas - 1] = jogadaAtual
-        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)]
+        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`; //coloca na tela a jogada atual + as jogadas já feitas
+        jogadasRaj[qtdJogadas - 1] = jogadaAtual //jogadasRaj[] esta recebendo a jogada do click 
+        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)] //jogadasSheldon[] recebe uma jogada aleatória na mesma posição de jogadasRaj[atual] 
         console.log(jogadasRaj, jogadasSheldon)
 
         qtdJogadas--;

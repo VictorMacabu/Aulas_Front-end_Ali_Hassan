@@ -1,21 +1,16 @@
 body{
     margin: 0;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .titulo{
     text-align: center;
     background-color: red;
 }
-.explicandoJogo{
-    margin-bottom: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-
-}
 .painelJogo{
     display: grid;
+    justify-content: center;
     grid-template-areas: "a1 a2 a2 a3";
-    grid-gap: 50px;
+    grid-gap: 40px;
     padding: 10px;
 }
 
@@ -31,7 +26,6 @@ body{
     background-repeat: no-repeat;
 }
 .imgJogador1{
-    margin: center;
     background-image: url(./images/Raj.jpg);
 }.imgJogador2{
     background-image: url(./images/Sheldon.jpg);    
@@ -42,14 +36,13 @@ body{
     background-color: rgba(201, 201, 212, 0.26);
     display: grid;
     grid-row: auto;
+    gap: 20px;
     grid-template-columns: auto auto;
     align-items: center;
-    justify-items: center;
+    justify-items: end;
     
 }
 .jkp1,.jkp2{
-    margin-left: 10px;
-    margin-right: 10px;
     background-color: rgb(255, 255, 255);    
 }
 
@@ -78,7 +71,6 @@ form{
     margin-left: 30px;
 }
 .jogadasPossiveis{
-    margin-top: 30px;
     display: flex;
     justify-content: space-around;
 
@@ -94,7 +86,7 @@ form{
     background-color: green;
     color: aliceblue;
     border-radius: 10px;
-    font-weight: 300; 
+    font-weight: 400; 
 }
 .reiniciarJogo{
     text-align: center;
@@ -103,7 +95,7 @@ form{
     background-color: red;
     color: aliceblue;
     border-radius: 10px;
-    font-weight: 300; 
+    font-weight: 400; 
 }
 /*         v   jogadas   v         */
 
@@ -124,26 +116,40 @@ form{
 }.imgJogada2{ 
     float: right;   
 }
-#pedra1,#pedra2{
+#pedra1{
     background: url("./images/pedra.png");
     background-size: 100px;
 }
-#papel1,#papel2{
+#papel1{
     background: url("./images/papel.png");
     background-size: 100px;
     background-repeat: no-repeat;
 }
-#tesoura1,#tesoura2{
+#tesoura1{
     background: url("./images/tesoura.png");
     background-size: 100px;
 }
-#lagarta1,#lagarta2{
+#lagarta1{
     background: url("./images/lagarta.png");
     background-size: 100px;
 }
-#Spock1,#Spock2{
+#Spock1{
     margin-top: 10px;
     background: url("./images/Spock.png");
     background-size: 100px;
     background-repeat: no-repeat;
+}
+.conteinerRegras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.explicandoJogo{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    display: inline-block;
+    text-align: center;
+
 }

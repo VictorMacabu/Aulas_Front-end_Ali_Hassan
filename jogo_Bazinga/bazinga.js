@@ -103,18 +103,19 @@ function comparaJogadas(j1, j2) {//regras do jogo
 
 }
 
-function startJogo() {
-    for (let i = 0; i <= jogadasRaj.length; i++) {
+async function startJogo() {
+    for (let i = 0; i < jogadasRaj.length; i++) { 
 
         comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
-        escolhaIMG(jogadasRaj[i], jogadasSheldon[i])    //muda a img da jogada
+        escolhaIMG(jogadasRaj[i], jogadasSheldon[i]);   //muda a img da jogada
         console.log("comparando jogada " + i)
+        await sleep(500);
         if (vencedor == jogadasRaj[i]) {
             ptsRaj += 1;   // atualiza placar                              
             placar(ptsRaj,ptsSheldon); // atualiza placar
             /*await sleep(70);*/
             console.log(jogadasRaj[i], jogadasSheldon[i])
-            window.onload = () => {alert("Sheldon diz: Raj trapaceou!")}
+            alert("Sheldon diz: Raj trapaceou!")
 
         } else if (vencedor == jogadasSheldon[i]) {
 
@@ -122,7 +123,7 @@ function startJogo() {
             placar(ptsRaj,ptsSheldon); // atualiza placar
             /*await sleep(70);*/
             console.log(jogadasRaj[i], jogadasSheldon[i])
-            window.onload = () => {alert("Sheldon diz: BAZINGA!")}
+            alert("Sheldon diz: BAZINGA!")
 
         } else if (vencedor == 'Empate') {
 
@@ -131,7 +132,7 @@ function startJogo() {
             placar(ptsRaj,ptsSheldon); // atualiza placar
             /*   await sleep(70);*/
             console.log(jogadasRaj[i], jogadasSheldon[i])
-            window.onload = () => {alert("Sheldon diz: De novo!")}
+            alert("Sheldon diz: De novo!")
         }
 
     }
@@ -159,7 +160,7 @@ function escolhaIMG(jog1, jog2) {
         img_jkp1.src = imgLagarta
         displayJogadaRaj.appendChild(img_jkp1);
     }
-    if (jog1 == 'Spoke') {
+    if (jog1 == 'Spock') {
         img_jkp1.src = imgSpock
         displayJogadaRaj.appendChild(img_jkp1);
     }
@@ -191,10 +192,10 @@ jogadas[0].addEventListener('click', () => { // pedra img
     jogadaAtual = pedra;
     regraJogadas(qtdJogadas)
     if (qtdJogadas > 0) {
-        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`;
-        jogadasRaj[qtdJogadas - 1] = jogadaAtual
-        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)]
-        console.log(jogadasRaj, jogadasSheldon)
+        exibirJogada.innerHTML += ` [ ${jogadaAtual} ]`; //coloca na tela a jogada atual + as jogadas já feitas 
+        jogadasRaj[qtdJogadas - 1] = jogadaAtual //jogadasRaj[] esta recebendo a jogada do click 
+        jogadasSheldon[qtdJogadas - 1] = arrayJogadas[random(0, 4)] //jogadasSheldon[] recebe uma jogada aleatória na mesma posição de jogadasRaj[atual] 
+        console.log(jogadasRaj, jogadasSheldon)//teste
 
         qtdJogadas--;
         console.log("jogadas restantes: " + qtdJogadas); //teste

@@ -55,7 +55,6 @@ body {
     gap: 20px;
     grid-template-columns: auto auto;
     align-items: center;
-    justify-items: end;
 }
 
 .jkp1, .jkp2 {
@@ -69,7 +68,7 @@ body {
 
 form {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 10%;
 }
 
 #qtdJogadas {
@@ -89,7 +88,7 @@ form {
 }
 
 #jogadasFeitas {
-    margin-left: 30px;
+    margin-left: 10%;
 }
 
 .jogadasPossiveis {
@@ -133,10 +132,6 @@ form {
 
 .jogadas {
     float: left;
-}
-
-.jogadas2 {
-    float: right;
 }
 
 .imgJogada {
@@ -191,65 +186,128 @@ form {
 
 @media screen and (max-width: 1464px) {
     .imgJogador1 {
-        background-size:200px 200px;
+        background-size: 200px 200px;
         height: 200px;
         width: 200px;
         border-radius: 5px;
         border: 1px black solid;
     }
     .imgJogador2 {
-        background-size:200px 200px;
+        background-size: 200px 200px;
         height: 200px;
         width: 200px;
         border-radius: 5px;
         border: 1px black solid;
     }
-} 
-@media screen and (max-width: 1115px) {   
+}
+
+@media screen and (max-width: 1115px) {
+    .painelJogo {
+        justify-content: space-between;
+    }
     .imgJogador1 {
-        background-size:150px 150px;
+        background-size: 150px 150px;
         height: 150px;
         width: 150px;
-        border-radius: 5px;
         border: 1px black solid;
     }
     .imgJogador2 {
-        background-size:150px 150px;
+        background-size: 150px 150px;
         height: 150px;
         width: 150px;
-        border-radius: 5px;
         border: 1px black solid;
     }
     .jogadaAtual {
         height: auto;
-        padding: 20px;
-        background-color: rgba(201, 201, 212, 0.26);
-        display: grid;
-        grid-row: auto;
-        gap: 10px;
-        grid-template-columns: auto auto;
+        padding: 0px;
+        max-width: 70px;
+        max-height: 70px;
         align-items: center;
-        justify-items: end;
     }
     .imgJogada {
-        background-size:90px 90px;
+        background-size: 90px 90px;
         height: 90px;
         width: 90px;
         margin-left: 20px;
     }
-    #pedra1{
-        background-size:90px 90px;
+    #pedra1 {
+        background-size: 90px 90px;
     }
-    #papel1{
-        background-size:90px 90px;
+    #papel1 {
+        background-size: 90px 90px;
     }
-    #tesoura1{
-        background-size:90px 90px;
+    #tesoura1 {
+        background-size: 90px 90px;
     }
-    #lagarta1{
-        background-size:90px 90px;
+    #lagarta1 {
+        background-size: 90px 90px;
     }
-    #Spock1{
-        background-size:90px 90px;
+    #Spock1 {
+        background-size: 90px 90px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imgJogador1 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .painelJogo {
+        display: inline-flex;
+        margin-top: 25px;
+    }
+    .imgJogador1, .imgJogador2 {
+        display: none;
+    }
+    .jogadaAtual {
+        display: inline-flex;
+        margin-top: 5px;
+    }
+    img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .jogadasPossiveis {
+        margin-left: 25%;
+        width: 220px;
+        margin-bottom: 10px;
+    }
+    .imgJogada {
+        background-size: 60px 60px;
+        height: 60px;
+        width: 60px;
+        margin-left: 10px;
+    }
+    #pedra1 {
+        background-size: 60px 60px;
+    }
+    #papel1 {
+        background-size: 60px 60px;
+    }
+    #tesoura1 {
+        background-size: 60px 60px;
+    }
+    #lagarta1 {
+        background-size: 60px 60px;
+    }
+    #Spock1 {
+        background-size: 60px 60px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    img {
+        max-width: 90px;
+        max-height: 90px;
     }
 }

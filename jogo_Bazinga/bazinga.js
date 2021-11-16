@@ -9,7 +9,7 @@ let jogadas = document.querySelectorAll(".imgJogada");
 const selecionar = document.getElementById("btnSelecionar");
 let exibirJogada = document.getElementById("jogadasFeitas");
 let displayJogadaRaj = document.getElementsByClassName("jkp1")[0];
-let displayJogadaSheldon = document.getElementsByClassName("jkp2")[0]; 
+let displayJogadaSheldon = document.getElementsByClassName("jkp2")[0];
 
 let jogadasRaj = [];
 let jogadasSheldon = [];
@@ -35,13 +35,13 @@ img_jkp2.style.width = "auto";
 img_jkp2.style.height = "auto";
 
 let img_jkp1 = document.createElement("IMG"); //img da jogada jkp1
-img_jkp1.src = ""; 
+img_jkp1.src = "";
 img_jkp1.style.width = "auto";
 img_jkp1.style.height = "auto";
 
-placar(ptsRaj,ptsSheldon);
+placar(ptsRaj, ptsSheldon);
 
-function placar(ptsRaj,ptsSheldon) { // atualiza o mostrador do placar 
+function placar(ptsRaj, ptsSheldon) { // atualiza o mostrador do placar 
     document.getElementById('placar').innerHTML = `${ptsRaj} X ${ptsSheldon}`;
 }
 
@@ -105,7 +105,7 @@ function comparaJogadas(j1, j2) {//regras do jogo
 }
 
 async function startJogo() {
-    for (let i = 0; i < jogadasRaj.length; i++) { 
+    for (let i = 0; i < jogadasRaj.length; i++) {
 
         comparaJogadas(jogadasRaj[i], jogadasSheldon[i]);
         escolhaIMG(jogadasRaj[i], jogadasSheldon[i]);   //muda a img da jogada
@@ -113,16 +113,16 @@ async function startJogo() {
         await sleep(500);
         if (vencedor == jogadasRaj[i]) {
             ptsRaj += 1;   // atualiza placar                              
-            placar(ptsRaj,ptsSheldon); // atualiza placar
-            
+            placar(ptsRaj, ptsSheldon); // atualiza placar
+
             console.log(jogadasRaj[i], jogadasSheldon[i]);
             alert("Sheldon diz: Raj trapaceou!");
 
         } else if (vencedor == jogadasSheldon[i]) {
 
             ptsSheldon += 1; // atualiza placar
-            placar(ptsRaj,ptsSheldon); // atualiza placar
-           
+            placar(ptsRaj, ptsSheldon); // atualiza placar
+
             console.log(jogadasRaj[i], jogadasSheldon[i]);
             alert("Sheldon diz: BAZINGA!");
 
@@ -130,9 +130,9 @@ async function startJogo() {
 
             ptsRaj += 1; // atualiza placar
             ptsSheldon += 1; // atualiza placar
-            placar(ptsRaj,ptsSheldon); // atualiza placar
-            
-            console.log(jogadasRaj[i], jogadasSheldon[i]); 
+            placar(ptsRaj, ptsSheldon); // atualiza placar
+
+            console.log(jogadasRaj[i], jogadasSheldon[i]);
             alert("Sheldon diz: De novo!");
         }
 
@@ -203,7 +203,6 @@ jogadas[0].addEventListener('click', () => { // pedra img
     }
 });
 
-
 jogadas[1].addEventListener('click', () => { // papel img
     jogadaAtual = papel;
     regraJogadas(qtdJogadas)
@@ -218,7 +217,6 @@ jogadas[1].addEventListener('click', () => { // papel img
     }
 });
 
-
 jogadas[2].addEventListener('click', () => { // tesoura img
     jogadaAtual = tesoura;
     regraJogadas(qtdJogadas)
@@ -232,7 +230,6 @@ jogadas[2].addEventListener('click', () => { // tesoura img
         console.log("jogadas restantes: " + qtdJogadas); //teste
     }
 });
-
 
 jogadas[3].addEventListener('click', () => { // lagarta img
     jogadaAtual = lagarta;

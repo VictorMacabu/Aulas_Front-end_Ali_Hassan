@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./styleBazinga.css" media="screen">
+
+    <title>BAZINGA!</title>
+</head>
+
+<body>
+    <div class="titulo"><img src="./images/Bazinga.png" alt="BAZINGA"></div>
+    <div class="painelJogo">
+        <div class="imgJogador1" id="gArea1">
+            <!-- imagem do Raj -->
+        </div>
+        <div class="jogadaAtual" id="gArea2">
+            <div class="jkp1"></div><!-- jogada atual do Raj -->
+            <div class="jkp2"></div><!-- jogada atual Sheldon -->
+        </div>
+        <div class="imgJogador2" id="gArea3">
+            <!-- imagem do Sheldon -->
+        </div>
+    </div>
+    <div class="entrada">
+        <form action="">
+            <label for="txtJogadas" id="lblJogadas">Quantidade de rodadas:</label>
+            <!-- recebe a quantidade de jogadas -->
+            <input type="number" name="txtJogadas" id="qtdJogadas">
+            <input type="button" value="Selecionar" id="btnSelecionar">
+        </form>
+        <div id="placar">
+            <!-- mostra o placar do jogo -->
+        </div>
+    </div>
+    <div id="jogadasFeitas">
+        <!-- Recebe as jogadas que o Raj fez seguindo a sequencia de input do usuario -->
+    </div>
+
+    <div class="jogadasPossiveis">
+
+        <div class="jogadas" id="jogadas">
+            <div class="imgJogada" id="pedra1" jogada="pedra"></div>
+            <div class="imgJogada" id="papel1" jogada="papel"></div>
+            <div class="imgJogada" id="tesoura1" jogada="tesoura"></div>
+            <div class="imgJogada" id="lagarta1" jogada="lagarta"></div>
+            <div class="imgJogada" id="Spock1" jogada="Spock"></div>
+        </div>
+    </div>
+    <div class="contPlay">
+        <input class="iniciarJogo" type="button" value="JOGAR"><!-- onclick via js para Iniciar partida -->
+        <input class="reiniciarJogo" type="button" value="Reiniciar"><!-- onclick via js para Reiniciar -->
+    </div>
+    <div class="conteinerRegras">
+        <div class="explicandoJogo">
+            No oitavo episodio da segunda temporada do seriado The Big Bang Theory, The Lizard-
+            Spock Expansion, Sheldon e Raj discutem qual dos dois é o melhor: o filme Saturn 3 ou a
+            série Deep Space 9. A sugestão de Raj para a resolução do impasse é uma disputa de
+            Pedra-Papel-Tesoura. Contudo, Sheldon argumenta que, se as partes envolvidas se
+            conhecem, entre 75% e 80% das disputas de Pedra-Papel-Tesoura terminam empatadas, e
+            então sugere o Pedra-Papel-Tesoura-Lagarto-Spock.
+
+        </div>
+        <div class="regras">
+            <p> As regras do jogo proposto são:</p>
+            <ol>
+                <li>a tesoura corta o papel;</li>
+                <li>o papel embrulha a pedra;</li>
+                <li>a pedra esmaga o lagarto;</li>
+                <li>o lagarto envenena Spock;</li>
+                <li>Spock destrói a tesoura;</li>
+                <li>a tesoura decapita o lagarto;</li>
+                <li>o lagarto come o papel;</li>
+                <li>o papel contesta Spock;</li>
+                <li>Spock vaporiza a pedra;</li>
+                <li>a pedra quebra a tesoura.</li>
+            </ol>
+            <p>Pontuação:</p>
+            <ul>
+                <li>Empate: ambos recebem 1 ponto</li>
+                <li>Vitória: o vencedor recebe 1 ponto</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="bazinga.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    background-color: red;
+}
+
+.painelJogo {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "a1 a2 a2 a3";
+    grid-gap: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#gArea1 {
+    grid-area: a1;
+}
+
+#gArea2 {
+    grid-area: a2;
+}
+
+#gArea3 {
+    grid-area: a3;
+}
+
+.imgJogador1, .imgJogador2 {
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    margin-left: 8px;
+    border: 2px black solid;
+    background-repeat: no-repeat;
+}
+
+.imgJogador1 {
+    background-image: url(./images/Raj.jpg);
+}
+
+.imgJogador2 {
+    background-image: url(./images/Sheldon.jpg);
+}
+
+.jogadaAtual {
+    height: 200px;
+    padding: 20px;
+    background-color: rgba(201, 201, 212, 0.26);
+    display: grid;
+    grid-row: auto;
+    gap: 20px;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.jkp1, .jkp2 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.entrada {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form {
+    display: inline-block;
+    margin-left: 10%;
+}
+
+#qtdJogadas {
+    width: 35px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#btnSelecionar {
+    height: 25px;
+    border-radius: 5px;
+}
+
+#placar {
+    text-align: center;
+    font-size: 50px;
+}
+
+#jogadasFeitas {
+    margin-left: 10%;
+}
+
+.jogadasPossiveis {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contPlay {
+    display: flex;
+    justify-content: center;
+}
+
+.iniciarJogo {
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    background-color: green;
+    color: aliceblue;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.reiniciarJogo {
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    color: aliceblue;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+/*         v   jogadas   v         */
+
+.imgJogada {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+.jogadas {
+    float: left;
+}
+
+.imgJogada {
+    float: left;
+}
+
+.imgJogada2 {
+    float: right;
+}
+
+#pedra1 {
+    background: url("./images/pedra.png");
+    background-size: 100px;
+}
+
+#papel1 {
+    background: url("./images/papel.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+#tesoura1 {
+    background: url("./images/tesoura.png");
+    background-size: 100px;
+}
+
+#lagarta1 {
+    background: url("./images/lagarta.png");
+    background-size: 100px;
+}
+
+#Spock1 {
+    margin-top: 10px;
+    background: url("./images/Spock.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.conteinerRegras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explicandoJogo {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1464px) {
+    .imgJogador1 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    .painelJogo {
+        justify-content: space-between;
+    }
+    .imgJogador1 {
+        background-size: 150px 150px;
+        height: 150px;
+        width: 150px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size: 150px 150px;
+        height: 150px;
+        width: 150px;
+        border: 1px black solid;
+    }
+    .jogadaAtual {
+        height: auto;
+        padding: 0px;
+        max-width: 70px;
+        max-height: 70px;
+        align-items: center;
+    }
+    .imgJogada {
+        background-size: 90px 90px;
+        height: 90px;
+        width: 90px;
+        margin-left: 20px;
+    }
+    #pedra1 {
+        background-size: 90px 90px;
+    }
+    #papel1 {
+        background-size: 90px 90px;
+    }
+    #tesoura1 {
+        background-size: 90px 90px;
+    }
+    #lagarta1 {
+        background-size: 90px 90px;
+    }
+    #Spock1 {
+        background-size: 90px 90px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imgJogador1 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .imgJogador2 {
+        background-size: 200px 200px;
+        height: 200px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    .painelJogo {
+        display: inline-flex;
+        margin-top: 25px;
+    }
+    .imgJogador1, .imgJogador2 {
+        display: none;
+    }
+    .jogadaAtual {
+        display: inline-flex;
+        margin-top: 5px;
+    }
+    img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .jogadasPossiveis {
+        margin-left: 25%;
+        width: 220px;
+        margin-bottom: 10px;
+    }
+    .imgJogada {
+        background-size: 60px 60px;
+        height: 60px;
+        width: 60px;
+        margin-left: 10px;
+    }
+    #pedra1 {
+        background-size: 60px 60px;
+    }
+    #papel1 {
+        background-size: 60px 60px;
+    }
+    #tesoura1 {
+        background-size: 60px 60px;
+    }
+    #lagarta1 {
+        background-size: 60px 60px;
+    }
+    #Spock1 {
+        background-size: 60px 60px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    img {
+        max-width: 90px;
+        max-height: 90px;
+    }
+}
